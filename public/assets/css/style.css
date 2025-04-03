@@ -1,0 +1,226 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e5e5e5;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    zoom: 1;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+.sidebar {
+    height: 100vh;
+    width: 100px;
+    background-color: #e5e5e5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+.sidebar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.sidebar-item i {
+    font-size: 24px;
+    color: #6c757d;
+}
+.sidebar-item.active i {
+    color: #00f;
+}
+.sidebar-item span {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 5px;
+}
+.sidebar-item.active span {
+    color: #00f;
+}
+.header {
+    height: 60px;
+    background-color: #e5e5e5;
+    position: fixed;
+    top: 0;
+    left: 100px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+.header .logo {
+    position: absolute;
+    left: 10px;
+    font-size: 24px;
+    color: #00f;
+}
+.header .search-bar {
+    width: 50%;
+}
+.main-content {
+    margin-left: 100px;
+    margin-top: 60px;
+    height: calc(96vh - 60px);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.main-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.main-body {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+    .sidebar-item span {
+        display: none;
+    }
+    .header {
+        left: 60px;
+    }
+    .main-content {
+        margin-left: 60px;
+    }
+    .main-header .btn {
+        padding: 5px;
+        font-size: 0;
+    }
+    .main-header .btn i {
+        font-size: 16px;
+    }
+    .main-header .btn span {
+        display: none;
+    }
+}
+
+
+
+
+
+
+/* TEST */
+/* Thêm các style từ mã của bạn */
+
+
+/* Nút Thêm (chung cho tất cả các mục) */
+.add-item-btn {
+    background: #052c65;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.add-item-btn:hover {
+    background: rgb(215, 107, 30);
+}
+/* Bảng danh sách chung */
+.table-container {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.table thead {
+    background: linear-gradient(135deg, #2b6cb0, #63b3ed);
+    color: #ffffff;
+}
+.table th {
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #2b6cb0;
+}
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #edf2f7;
+    text-align: center;
+}
+.table tbody tr {
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.table tbody tr:hover {
+    background: #e6f7ff;
+    transform: translateY(-2px);
+}
+
+/* Icon hành động */
+.action-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.action-icon {
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.edit-icon {
+    color: #2b6cb0;
+}
+.edit-icon:hover {
+    background: #2b6cb0;
+    color: #ffffff;
+}
+.delete-icon {
+    color: #e53e3e;
+}
+.delete-icon:hover {
+    background: #e53e3e;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h3 {
+        font-size: 1.4rem;
+    }
+    .add-item-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    .table th, .table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .action-icon {
+        font-size: 1rem;
+        padding: 6px;
+    }
+}
